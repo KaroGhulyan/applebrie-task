@@ -1,0 +1,8 @@
+body {
+  background: linear-gradient(rgb(169, 201, 255) 0%, rgb(218, 203, 238) 100%) no-repeat;
+  color: rgb(54, 53, 55);
+  font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
+  transition: all 0.5s linear 0s;
+  padding: 30px;
+  height: 100vh;
+}
