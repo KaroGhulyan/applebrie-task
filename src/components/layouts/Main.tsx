@@ -1,5 +1,4 @@
 import React, { ReactNode, useState, Suspense } from "react";
-import { Layout, Space } from "antd";
 import {
   AppContent,
   AppLayout,

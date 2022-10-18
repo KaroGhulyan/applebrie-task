@@ -1,22 +1,22 @@
-import fetchData from "../../services/api/fetchData";
-import { USERS_API } from "../../config/apiConfig";
-import { UserInterface } from "../../interfaces/interfaces";
 import { SimpleCard } from "../../components/shared/cards/SimpleCard";
 import { UserIcon, ListWrapper } from "../../assets/styles/shared/";
-
-const resource = fetchData(USERS_API.GET_USERS);
+import useTransformData from "../../hooks/useTransformData";
+import { useNavigate } from "react-router-dom";
 
 const UsersList = () => {
-  const users = resource.read() as UserInterface[];
+  const { users } = useTransformData();
+  const navigate = useNavigate();
+
   return (
     <ListWrapper>
       {users.map((user) => (
-        <SimpleCard
-          key={user.id}
-          icon={<UserIcon />}
-          title={user.name}
-          description={user.email}
-        />
+        <div onClick={() => navigate(`user/${user.id}`)} key={user.id}>
+          <SimpleCard
+            icon={<UserIcon />}
+            title={user.name}
+            description={user.email}
+          />
+        </div>
       ))}
     </ListWrapper>
   );

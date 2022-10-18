@@ -1,3 +1,3 @@
-export { UserCard } from "./CardsStyles";
+export { UserCard, PostCard } from "./CardsStyles";
 export { UserIcon } from "./IconsStyles";
-export { ListWrapper } from "./WrappersStyles";
+export { ListWrapper, PostsWrapper } from "./WrappersStyles";

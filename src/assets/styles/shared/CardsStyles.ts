@@ -8,6 +8,7 @@ export const UserCard = styled(Card)`
   justify-content: space-between;
   width: 300px;
   margin: 0.5em;
+  max-height: 100px;
   background-color: ${(props) => props.theme.colors.appMainColor};
   .ant-card-body {
     border-radius: 10px;
@@ -26,5 +27,18 @@ export const UserCard = styled(Card)`
     small {
       color: lightslategrey;
     }
+  }
+`;
+
+export const PostCard = styled(Card)`
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0.5em;
+  background-color: ${(props) => props.theme.colors.appMainColor};
+  color: ${(props) => props.theme.colors.appTextColor};
+  .ant-card-head-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: ${(props) => props.theme.colors.appTextColor};
   }
 `;

@@ -6,8 +6,8 @@ import {
   SiderNav,
 } from "../../assets/styles/components/layouts";
 import { Switch } from "antd";
-import { UIConfigContext } from "../../store/context/UIConfigProvider";
-import { UIConfigActionTypes } from "../../store/context/actions";
+import { UIConfigContext } from "../../store/context/configStore/UIConfigProvider";
+import { UIConfigActionTypes } from "../../store/context/configStore/actions";
 import { THEMES_TYPE } from "../../config/UIConfig";
 import { useNavigate } from "react-router-dom";
 
