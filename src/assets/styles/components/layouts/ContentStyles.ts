@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Layout } from "antd";
+import { Layout, Spin } from "antd";
 
 const { Content, Header } = Layout;
 
@@ -8,7 +8,7 @@ export const MainLayout = styled(Layout)`
   border-radius: 60px;
   border: 15px solid rgba(255, 255, 255, 0.37);
   background-clip: padding-box;
-  height: 90vh;
+  height: 80vh;
   overflow: auto;
 `;
 
@@ -17,8 +17,19 @@ export const AppContent = styled(Content)`
   background: ${(props) => props.theme.colors.appMainColor};
 `;
 
+export const AppLayout = styled(Content)`
+  background: ${(props) => props.theme.colors.appMainColor};
+  overflow: clip;
+`;
+
 export const AppHeaderLayout = styled(Header)`
   background: ${(props) => props.theme.colors.appMainColor};
   color: ${(props) => props.theme.colors.appTextColor};
-  padding: 0;
+`;
+
+export const AppSpinner = styled(Spin)`
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

@@ -9,7 +9,9 @@ const App = () => {
     <UIConfigProvider>
       <Theme>
         <BrowserRouter>
-          <Main>{/*<AppRoutes />*/}</Main>
+          <Main>
+            <AppRoutes />
+          </Main>
         </BrowserRouter>
       </Theme>
     </UIConfigProvider>

@@ -1,21 +1,30 @@
-import { Layout } from "antd";
-import React, { ReactNode, useState } from "react";
-import { AppContent, MainLayout } from "../../assets/styles/components/layouts";
+import React, { ReactNode, useState, Suspense } from "react";
+import { Layout, Space } from "antd";
+import {
+  AppContent,
+  AppLayout,
+  MainLayout,
+} from "../../assets/styles/components/layouts";
+import { AppHeader } from "./AppHeader";
+import { Spinner } from "../shared";
+import { AppSider } from "./AppSider";
 
 interface MainInterface {
   children: ReactNode;
 }
+
 export const Main: React.FC<MainInterface> = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
     <MainLayout>
-      {/*<AppSider collapsed={collapsed} />*/}
-      <Layout className="site-layout">
-        {/*<AppHeader collapsed={collapsed} setCollapsed={setCollapsed} />*/}
-        <h1>dasds</h1>
-        <AppContent>{children}</AppContent>
-      </Layout>
+      <AppSider collapsed={collapsed} />
+      <AppLayout className="site-layout">
+        <AppHeader collapsed={collapsed} setCollapsed={setCollapsed} />
+        <Suspense fallback={<Spinner />}>
+          <AppContent>{children}</AppContent>
+        </Suspense>
+      </AppLayout>
     </MainLayout>
   );
 };
